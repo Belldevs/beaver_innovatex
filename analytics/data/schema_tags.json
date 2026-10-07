@@ -1,0 +1,52 @@
+{
+  "_note": "Every column carries tags. A role can read a column only if the role is allowed EVERY tag on that column. Change tags here to re-classify data; no code changes needed.",
+  "tables": {
+    "transactions": {
+      "file": "transactions.csv",
+      "date_column": "txn_date",
+      "dimensions": ["channel", "merchant_category", "country"],
+      "columns": {
+        "txn_id": ["transactions"],
+        "txn_date": ["transactions"],
+        "customer_id": ["transactions"],
+        "channel": ["transactions"],
+        "merchant_category": ["transactions"],
+        "country": ["transactions"],
+        "amount": ["transactions"],
+        "status": ["transactions"],
+        "is_fraud": ["risk"]
+      }
+    },
+    "loans": {
+      "file": "loans.csv",
+      "date_column": "issue_date",
+      "dimensions": ["status"],
+      "columns": {
+        "loan_id": ["loans"],
+        "customer_id": ["loans"],
+        "customer_name": ["pii"],
+        "email": ["pii"],
+        "national_id": ["pii", "restricted"],
+        "issue_date": ["loans"],
+        "principal": ["loans"],
+        "interest_rate": ["loans"],
+        "amount_due": ["loans"],
+        "amount_repaid": ["loans"],
+        "status": ["loans"],
+        "credit_score": ["loans", "risk"]
+      }
+    },
+    "pnl": {
+      "file": "pnl.csv",
+      "date_column": "month",
+      "dimensions": [],
+      "columns": {
+        "month": ["financials"],
+        "fee_revenue": ["financials"],
+        "interest_income": ["financials"],
+        "operating_expense": ["financials"],
+        "loan_loss_provision": ["financials"]
+      }
+    }
+  }
+}

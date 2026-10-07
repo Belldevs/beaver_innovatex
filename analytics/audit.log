@@ -1,0 +1,2 @@
+{"ts": "2026-10-07T01:09:22", "user": "u1", "role": "admin", "question": "How did the fraud rate change between 2024 and 2025?", "metric": "fraud_rate", "allowed": true, "denied_columns": [], "planner": "rules"}
+{"ts": "2026-10-07T01:09:58", "user": "u4", "role": "support", "question": "How many transactions did we process in 2025?", "metric": "transaction_count", "allowed": true, "denied_columns": [], "planner": "rules"}

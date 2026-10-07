@@ -1,0 +1,26 @@
+{
+  "roles": {
+    "admin": {
+      "description": "Administrator / executive board. Full access to every tag.",
+      "allowed_tags": ["*"]
+    },
+    "finance": {
+      "description": "Finance team. Transactions, loan books and the P&L, but no customer PII or risk scores.",
+      "allowed_tags": ["transactions", "financials", "loans"]
+    },
+    "risk": {
+      "description": "Risk team. Transactions, loans and risk data, but no P&L or customer PII.",
+      "allowed_tags": ["transactions", "loans", "risk"]
+    },
+    "support": {
+      "description": "Customer support. Transactions and customer contact details only.",
+      "allowed_tags": ["transactions", "pii"]
+    }
+  },
+  "users": [
+    {"id": "u1", "name": "Alex Morgan", "title": "Board Chair", "roles": ["admin", "finance"]},
+    {"id": "u2", "name": "Jordan Lee", "title": "Head of Finance", "roles": ["finance"]},
+    {"id": "u3", "name": "Sam Rivera", "title": "Risk Officer", "roles": ["risk", "support"]},
+    {"id": "u4", "name": "Casey Kim", "title": "Support Agent", "roles": ["support"]}
+  ]
+}
